@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
+package pojistovna;
+
 import java.util.Scanner;
 
 // Hlavni trida

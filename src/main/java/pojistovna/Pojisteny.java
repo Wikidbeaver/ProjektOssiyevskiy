@@ -18,7 +18,7 @@ public class Pojisteny {
     public String getJmeno() {
         return jmeno;
     }
-
+    // gettery jmena a prijmeni
     public String getPrijmeni() {
         return prijmeni;
     }

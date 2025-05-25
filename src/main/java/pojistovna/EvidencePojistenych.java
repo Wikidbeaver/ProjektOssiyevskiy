@@ -18,10 +18,22 @@ class EvidencePojistenych {
         String prijmeni = nactiNeprazdne(scanner);
 
         System.out.print("Zadejte věk: ");
-        int vek = Integer.parseInt(scanner.nextLine()); // Prevod na cislo
+        int vek;
 
-        System.out.print("Zadejte telefon: ");
-        String telefon = scanner.nextLine();
+        while (true) {
+
+                vek = Integer.parseInt(scanner.nextLine());
+                if (vek >= 0 && vek <= 120) {
+                    break; // spravny vek ukonci cyklus
+                } else {
+                    System.out.print("Věk musí být mezi 0 a 120. Zkuste to znovu: ");
+                }
+
+        }
+
+        System.out.print("Zadejte telefon(\n" +
+                "případně číslo rodiče nebo opatrovníka): ");
+        String telefon = nactiNeprazdne(scanner);
 
         pojisteni.add(new Pojisteny(jmeno, prijmeni, vek, telefon)); // Ulozeni pojisteneho do seznamu
         System.out.println("Pojištěný byl přidán.");
@@ -39,7 +51,7 @@ class EvidencePojistenych {
     }
 
     // Metoda pro vyhledavani pojisteneho
-    public void vyhledatPojisteneho(Scanner scanner) {
+    public void vyhledejPojisteneho(Scanner scanner) {
         System.out.print("Zadejte jméno: ");
         String jmeno = scanner.nextLine().trim();
         System.out.print("Zadejte příjmení: ");
@@ -47,7 +59,7 @@ class EvidencePojistenych {
 
         boolean nalezen = false;
         for (Pojisteny p : pojisteni) {
-            if (p.getJmeno().equalsIgnoreCase(jmeno) && p.getPrijmeni().equalsIgnoreCase(prijmeni)) {
+            if (p.getJmeno().equalsIgnoreCase(jmeno) || p.getPrijmeni().equalsIgnoreCase(prijmeni)) {
                 System.out.println(p); // Vysledek hledani
                 nalezen = true;
             }

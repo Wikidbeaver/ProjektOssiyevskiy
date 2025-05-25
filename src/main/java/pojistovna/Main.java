@@ -28,7 +28,7 @@ public class Main {
                         evidence.vypisVsechny(); // Vypis vsech pojistenych
                         break;
                     case "3":
-                        evidence.vyhledatPojisteneho(scanner); // Vyhledavani
+                        evidence.vyhledejPojisteneho(scanner); // Vyhledavani
                         break;
                     case "4":
                         System.out.println("Ukončuji aplikaci."); // Ukonceni
